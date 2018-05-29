@@ -1,0 +1,163 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Roboto Slab', serif;
+    color: #B5865A;
+    background-color: rgb(10, 13, 97);
+}
+
+a, a:hover, a:active{
+    color: #A5A4A4;
+}
+h1, h2, h3, h4, .title{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar{
+    padding: 20px 50px;
+    width: calc(100% - 100px);
+    position: fixed;
+    background-color: rgb(10, 13, 97);
+    z-index: 9999;
+}
+
+.navbar a{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.title{
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0;
+    float: left;
+}
+
+.social{
+    float: right;
+    font-size: 20px;
+}
+.social a{
+    color: #B5865A;
+    margin-right: 5px;
+}
+
+/*.contact{
+    padding: 0 10px;
+    color: #B5865A;
+    text-decoration: none;
+    border-radius: 99px;
+    border: 1px solid #B5865A;
+    font-size: 14px;
+    transition: all 100ms;
+}
+.contact:hover{
+    color: rgb(10, 13, 97);
+    background-color: #B5865A;
+}*/
+
+header, footer{
+    padding: 50px;
+}
+
+.header{
+    min-height: 100%;
+}
+
+.header .desc{
+    width: 35%;
+    margin-top: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 80px;
+    font-style: italic;
+    float: right;
+    background: -webkit-linear-gradient(#B5865A, rgb(10, 13, 97));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#logo{
+    width: 18px;
+    float: left;
+    margin-top: 3px;
+    margin-right: 5px;
+    display: none;
+}
+
+section{
+    padding: 0 50px;
+}
+
+.section-title{
+    text-align: center;
+    margin: 100px 0;
+    color: #090B54;
+    font-size: 100px;
+}
+
+.frame{
+    width: 60%;
+    margin: 50px 0;
+    float: left;
+}
+
+.frame.odd{
+    float: right;
+}
+
+.frame .title{
+    float: none;
+    font-size: 35px;
+    margin: 5px 0;
+}
+
+.frame .line{
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to right, #090B54, rgb(10, 13, 97));
+}
+
+.skills{
+    margin: 150px 0;
+}
+
+.date{
+    color: #A5A4A4;
+    font-size: 14px;
+}
+
+.school, .light{
+    color: #A5A4A4;
+}
+
+.company{
+    color: #B5865A;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#sculpture{
+    position: absolute;
+    top: 68px;
+    left: 0;
+    z-index: -1;
+}
+
+.thumb{
+    width: 200px;
+    height: 150px;
+    background: no-repeat center;
+    background-size: contain;
+    margin-bottom: 15px;
+
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+.clearfix{
+    clear: both;
+}
