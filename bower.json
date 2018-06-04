@@ -1,0 +1,17 @@
+{
+  "name": "zuunduun.github.io",
+  "homepage": "https://github.com/zuunduun/zuunduun.github.io",
+  "authors": [
+    "Thomas Lhoest <tlhoest@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

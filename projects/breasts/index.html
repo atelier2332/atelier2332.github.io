@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Milk is an augmented land art experience" />
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+  <title>Milk - augmented land art experience</title>
+  <style>
+    html, body{
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Slabo 27px', serif;
+      overflow-x: hidden;
+      /*color: #005ADA;*/
+      color: #F20000;
+    }
+    .infos{
+      /*background-color: #E6D02A;*/
+      background-color: #FFCFED;
+      width: calc(30% - 80px);
+      min-height: calc(100% - 80px);
+      float: right;
+      padding: 40px;
+    }
+    #map{
+      width: calc(70%);
+      height: 100%;
+      float: left;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .title{
+      margin: 0;
+      font-size: 69px;
+      font-family: 'Shrikhand', cursive;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="infos">
+    <h1 class="title">Milk</h1>
+    <p>
+      Initiated in march 2017, <strong>Milk is an augmented land art experience</strong> set on two pentagonal pyramids called "Les Pyramides" (Lille - FR).
+    </p>
+    <h2>What ?</h2>
+    <p>
+      Milk is an Android application.
+      <br>It's augmented reality cuz I placed geolocalized virtual audiosources on the pyramids.
+      <br>It's an experience cuz the music lives & breathe as you wander about the pyramids.
+    </p>
+    <h2>What do I do ?</h2>
+    <p>
+      1. <a href="#">Download the app</a> (Android only) & install it (you need a gyro + GPS on your freaking phone !).
+      <br><br>2. <strong>Go to "Les Pyramides"</strong>. You have to go to this specific place to activate the app.
+      Anywhere else on earth the app will <strong>NOT</strong> work & you'll get a black screen.
+      When the app is activated, your screen will display a sweet & soothing <strong>pink</strong>.
+      <br><br>
+      3. <strong>Now you hear the music</strong>.
+      <br>Plug your headphones, it's a <a href="https://en.wikipedia.org/wiki/Binaural_recording">binaural</a> experience.
+      <br>Each virtual audiosource contains one track, so the main "mix" depends on your precise location.
+      <br><strong>Walk</strong>, <strong>listen</strong>, and <strong>do whatever you want</strong>.
+    </p>
+    <h2>Where exactly ?</h2>
+    <p>
+      - Pyramid I (top) :  50°38'12.1"N 3°02'17.8"E
+      <br>- Pyramid II (top) :  50°38'15.4"N 3°02'18.2"E
+    </p>
+    <h2>Tech</h2>
+    <p>
+      Based on a script I wrote in 2016 for Unity with Vincent Habart, the technology is open-source (as usual).
+      You can find the Github repo <a href="#">here</a>.
+    </p>
+    <h2>Release date</h2>
+    <p>
+      Spring 2018.
+    </p>
+  </section>
+
+  <section id="map"></section>
+
+  <script>
+      function initMap() {
+
+        var p1 = {lat: 50.636694, lng: 3.038278};
+        var p2 = {lat: 50.637611, lng: 3.038389};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 18,
+          center: p2,
+          mapTypeId: 'satellite'
+        });
+
+        var m1 = new google.maps.Marker({
+          position: p1,
+          map: map,
+          icon: 'm1.png',
+          title: 'Pyramid I'
+        });
+
+        var m2 = new google.maps.Marker({
+          position: p2,
+          map: map,
+          icon: 'm2.png',
+          title: 'Pyramid II'
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD8IrKK6ZL7IBMvEqIWBvLF_3bpXB_K44&callback=initMap">
+    </script>
+</body>
+</html>
