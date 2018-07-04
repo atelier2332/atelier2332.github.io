@@ -1,0 +1,37 @@
+{
+  "searchResults": [
+    {
+      "rh_matricule": "50000",
+      "rh_nom": "MAHADOO",
+      "rh_prenom": "PRECILLA",
+      "rh_poste": "RESPONSABLE DE RAYON",
+      "rh_site": "BOU",
+      "nomSite": "Magasin de Boulogne",
+      "mag_respHierarchique": "80329",
+      "mag_entite": "Jaune",
+      "app_avatar": "avatar-placeholder.png"
+    },
+    {
+      "rh_matricule": "50000",
+      "rh_nom": "MAHADOO",
+      "rh_prenom": "PRECILLA",
+      "rh_poste": "RESPONSABLE DE RAYON",
+      "rh_site": "BOU",
+      "nomSite": "Magasin de Boulogne",
+      "mag_respHierarchique": "80329",
+      "mag_entite": "Jaune",
+      "app_avatar": "avatar-placeholder.png"
+    },
+    {
+      "rh_matricule": "50000",
+      "rh_nom": "MAHADOO",
+      "rh_prenom": "PRECILLA",
+      "rh_poste": "RESPONSABLE DE RAYON",
+      "rh_site": "BOU",
+      "nomSite": "Magasin de Boulogne",
+      "mag_respHierarchique": "80329",
+      "mag_entite": "Jaune",
+      "app_avatar": "avatar-placeholder.png"
+    }
+  ]
+}

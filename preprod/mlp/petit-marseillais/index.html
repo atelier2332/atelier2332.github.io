@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <title>Petit Marseillais</title>
+
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        @media screen and (max-width: 960px) {
+            canvas, #preloader, #hud{
+                top: -160px;
+                left: -240px;
+                -webkit-transform: scale(0.5);
+                -moz-transform: scale(0.5);
+                -ms-transform: scale(0.5);
+                -o-transform: scale(0.5);
+                transform: scale(0.5);
+            }
+        }
+
+        @media screen and (min-width: 960px) {
+            canvas, #preloader{
+                top: 0;
+                left: 0
+            }
+        }
+
+        canvas{
+            position: absolute;
+        }
+
+        #preloader{
+            width: 960px;
+            height: 640px;
+            position: absolute;
+            z-index: 1000;
+            background-color: #ececec;
+        }
+
+        #preloader-in{
+            width: 269px;
+            height: 263px;
+            margin: auto auto;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        #loadbar {
+            width: 0;
+            height: 10px;
+            z-index: 2;
+            background-color: #fff;
+            margin: 155px 0 0 55px;
+        }
+
+        #hud{
+            width: 960px;
+            height: 640px;
+            position: absolute;
+            z-index: 500;
+            overflow: hidden;
+        }
+
+        #play{
+            position: absolute;
+            top: 10%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 100px;
+            text-align: center;
+        }
+
+        #end{
+            position: absolute;
+            top: 10%;
+            width: 50%;
+            background-color: #ffffff;
+            padding: 0 20px;
+
+            -webkit-transition: left 1s;
+            -moz-transition: left 1s;
+            -ms-transition: left 1s;
+            -o-transition: left 1s;
+            transition: left 1s;
+        }
+
+        #end.init{
+            left: 100%;
+        }
+        #end.moved{
+            left: 40%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="preloader">
+        <div id="preloader-in">
+            <div id="loadbar"></div>
+        </div>
+    </div>
+
+    <div id="hud">
+        <a id="play" href="#">JOUER</a>
+
+        <div id="end" class="init">
+            <h1>Bien joué!</h1>
+        </div>
+    </div>
+
+    <script src="js/libs/pixi.dev.js"></script>
+    <script data-main="js/main" src="js/libs/require.min.js"></script>
+</body>
+</html>

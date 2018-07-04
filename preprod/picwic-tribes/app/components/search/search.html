@@ -1,0 +1,26 @@
+<div class="frame search-results">
+  <div class="heading green">
+    <img src="assets/img/totem-green.png" alt="Totem Vert" class="icon" />
+    <div class="title">Recherche</div>
+    <div class="clearfix"></div>
+  </div>
+  <a ui-sref="home" class="btn-close">Fermer</a>
+  <ul>
+    <li ng-repeat="member in searchResults">
+      <img ng-src="{{'assets/img/' + member.app_avatar}}" alt="Avatar" class="avatar" />
+      <div class="name-container">
+        <div class="name">{{member.rh_prenom}} {{member.rh_nom}}</div>
+        <div class="job">{{member.rh_poste}}</div>
+      </div>
+      <div class="site">{{member.nomSite}}</div>
+      <div class="btn-container">
+        <a ui-sref="site({codeSite: member.rh_site, '#': member.rh_matricule})" class="btn-look">
+          <img src="assets/img/search-white.png" alt="Rechercher" />
+          <div class="">Voir la fiche dans l'organigramme</div>
+        </a>
+      </div>
+      <div class="clearfix"></div>
+      <hr class="greyline" ng-hide="$last">
+    </li>
+  </ul>
+</div>

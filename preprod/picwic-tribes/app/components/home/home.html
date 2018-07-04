@@ -1,0 +1,33 @@
+<div class="frame">
+  <div class="heading services">
+    <img src="assets/img/totem-blue.png" alt="Totem Bleu" class="icon" />
+    <div class="title">Les tribus dans les services</div>
+    <div class="clearfix"></div>
+  </div>
+  <ul>
+    <li class="tile service" ng-repeat="site in sites" ng-if="site.typeSite == 'Service'">
+      <a ui-sref="site({codeSite: site.codeSite})" site-hover="assets/img/test/{{site.app_mag_thumb}}" base-img="assets/img/blueflag.png">
+        <p>{{site.nomSite}}</p>
+        <div class="nb-sticker" ng-show="site.nbNoobs > 0">{{site.nbNoobs}}</div>
+      </a>
+    </li>
+    <li class="clearfix"></li>
+  </ul>
+</div>
+
+<div class="frame">
+  <div class="heading shops">
+    <img src="assets/img/totem-red.png" alt="Totem Rouge" class="icon" />
+    <div class="title">Les tribus dans les magasins</div>
+    <div class="clearfix"></div>
+  </div>
+  <ul>
+    <li class="tile shop" ng-repeat="site in sites" ng-if="site.typeSite == 'Magasin'">
+      <a ui-sref="site({codeSite: site.codeSite})" site-hover="assets/img/test/{{site.app_mag_thumb}}" base-img="assets/img/redflag.png">
+        <p>{{site.nomSite}}</p>
+        <div class="nb-sticker" ng-show="site.nbNoobs > 0">{{site.nbNoobs}}</div>
+      </a>
+    </li>
+    <li class="clearfix"></li>
+  </ul>
+</div>
