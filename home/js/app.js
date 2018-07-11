@@ -5,7 +5,7 @@
 
   var scene = new THREE.Scene();
   var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-  camera.position.z = 5;
+  camera.position.z = 40;
 
   var renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerWidth, window.innerHeight );
@@ -19,7 +19,7 @@
 
   var material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: texture, side:THREE.DoubleSide } );
 
-  geometry = new THREE.CircleGeometry( 2, 32 );
+  geometry = new THREE.CircleGeometry( 20, 32 );
   var circle = new THREE.Mesh( geometry, material );
   //circle.position.set({x: -0.1, y: -0.1, z: 0});
   scene.add( circle );
@@ -32,10 +32,10 @@
   	requestAnimationFrame( animate );
   	renderer.render( scene, camera );
 
-    circle.rotation.x += 0.001 * nX;
-    circle.rotation.y += 0.01 * nY;
+    circle.rotation.x -= 0.002 * nX;
+    circle.rotation.y += 0.001 * nY;
 
-    torusKnot.rotation.x -= 0.009 * nX;
+    torusKnot.rotation.x -= 0.002 * nX;
     torusKnot.rotation.y += 0.001 * nY;
   }
   animate();

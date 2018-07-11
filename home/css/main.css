@@ -1,0 +1,49 @@
+html, body{
+  font-family: 'Gaegu', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#three{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+a{
+  color: #fff;
+}
+a:hover{
+  color: #fff;
+}
+ul, li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul{
+  margin-bottom: 20px;
+}
+
+
+
+.desc{
+  font-size: 80px;
+  width: 300px;
+  word-wrap: break-word;
+  line-height: 58px;
+  margin: 0 auto;
+}
+
+.logo{
+  width: 150px;
+  margin: 40px auto;
+  display: block;
+}
+
+.nav{
+  width: 400px;
+  margin: 40px auto;
+  font-size: 20px;
+}
