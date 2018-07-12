@@ -5,34 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="Développement Front-End / développement créatif / création et conception UI/UX">
-  <title>Néons Mutants | Creative coding studio based in Lille (FR)</title>
+  <title>Néons Mutants | Creative coding studio</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Markazi+Text:400,700|Gaegu" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700,900,900i" rel="stylesheet">
   <link rel="stylesheet" href="bower_components/bulma/css/bulma.min.css">
   <link rel="stylesheet" href="home/css/main.css">
 </head>
 <body>
 
-  <img src="home/img/nm.svg" alt="Néons Mutants" class="logo">
+  <header class="header">
+      <img src="home/img/logo-nm.svg" alt="Néons Mutants" class="logo">
+  </header>
 
-  <div class="desc">
-    <p>CREATIVE DEV + AUGMENTED REALITY + INTERACTIVE INSTALLATIONS + N.M = LOVE</p>
+  <div class="navlink-container left">
+    <a href="" class="navlink" id="navlink-left">studio</a>
   </div>
 
-  <nav class="nav">
-    <div class="columns">
-      <div class="column">
-        <a href="">STUDIO</a>
-      </div>
-      <div class="column">
-        <a href="">LAB</a>
-      </div>
-    </div>
-  </nav>
+  <div class="desc">
+    <p>CREATIVE / FRONT-END CODE + LOVE = WEB & MOBILE APPS = AUGMENTED REALITY = INTERACTIVE INSTALLATIONS = NEONS MUTANTS</p>
+  </div>
+
+  <div class="navlink-container right">
+    <a href="" class="navlink" id="navlink-right">lab</a>
+  </div>
+
+  <div class="navlink-title">studio</div>
 
   <section id="three"></section>
 
   <script src="https://fastcdn.org/three.js/73/three.min.js"></script>
+  <script src="bower_components/zepto/zepto.min.js"></script>
   <script type="text/javascript" src="home/js/app.js"></script>
+  <script type="text/javascript" src="home/js/transitions.js"></script>
 </body>
 </html>

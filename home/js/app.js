@@ -7,9 +7,9 @@
   var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
   camera.position.z = 40;
 
-  var renderer = new THREE.WebGLRenderer();
+  var renderer = new THREE.WebGLRenderer({alpha: true});
   renderer.setSize( window.innerWidth, window.innerHeight );
-  renderer.setClearColor(0xFFCA19);
+  //renderer.setClearColor(0xFFCA19);
   document.getElementById('three').appendChild( renderer.domElement );
 
   var texture = new THREE.TextureLoader().load( "home/textures/1.png" );
