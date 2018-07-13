@@ -5,32 +5,32 @@ html, body{
     padding: 0;
 }
 body{
-    font-family: 'Roboto', sans-serif;
-    color: #0021FF;
-    background-color: #ececec;
+    font-family: 'Roboto Slab', serif;
+    color: #B5865A;
+    background-color: rgb(10, 13, 97);
 }
 
 a, a:hover, a:active{
-    color: #0021FF;
+    color: #A5A4A4;
 }
-h1, h2, h3, h4{
-  font-weight: 900;
+h1, h2, h3, h4, .title{
+    font-family: 'Montserrat', sans-serif;
 }
 
 .navbar{
     padding: 20px 50px;
     width: calc(100% - 100px);
     position: fixed;
-    background-color: #ececec;
+    background-color: rgb(10, 13, 97);
     z-index: 9999;
 }
 
 .navbar a{
-  font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .title{
-    font-weight: 100;
+    font-weight: 700;
     font-size: 20px;
     margin: 0;
     float: left;
@@ -41,7 +41,7 @@ h1, h2, h3, h4{
     font-size: 20px;
 }
 .social a{
-    color: #0021FF;
+    color: #B5865A;
     margin-right: 5px;
 }
 
@@ -70,11 +70,11 @@ header, footer{
 .header .desc{
     width: 35%;
     margin-top: 50px;
+    font-family: 'Roboto', sans-serif;
     font-weight: 100;
-    font-size: 112px;
+    font-size: 80px;
     font-style: italic;
     float: right;
-    color: white;
     /* background: -webkit-linear-gradient(#B5865A, rgb(10, 13, 97));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
@@ -95,9 +95,8 @@ section{
 .section-title{
     text-align: center;
     margin: 100px 0;
-    font-size: 112px;
-    color: white;
-    font-weight: 100;
+    color: #090B54;
+    font-size: 100px;
 }
 
 .frame{
@@ -119,7 +118,7 @@ section{
 .frame .line{
     width: 100%;
     height: 20px;
-    background: linear-gradient(to right, #fff, #ececec);
+    background: linear-gradient(to right, #090B54, rgb(10, 13, 97));
 }
 
 .skills{
@@ -127,24 +126,23 @@ section{
 }
 
 .date{
-    font-size: 12px;
-    font-weight: 300;
+    color: #A5A4A4;
+    font-size: 14px;
 }
 
 .school, .light{
-
+    color: #A5A4A4;
 }
 
 .company{
+    color: #B5865A;
     font-size: 16px;
     margin-bottom: 10px;
-    font-weight: 700;
-    font-style: italic;
 }
 
 #sculpture{
     position: absolute;
-    top: 65px;
+    top: 68px;
     left: 0;
     z-index: -1;
 }

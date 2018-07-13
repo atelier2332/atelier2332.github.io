@@ -26,14 +26,15 @@ class RingOfGlory{
             geometry.vertices.push(splinePoints[i]);
         }
 
-        this.ring = new THREE.Line(geometry, new THREE.LineBasicMaterial({color: 0x0021FF}));
+        this.ring = new THREE.Line(geometry, new THREE.LineBasicMaterial({color: 0xB5865A}));
 
         // VEHICLE
 
         this.vehicle = new THREE.Mesh(
-            new THREE.OctahedronBufferGeometry(5, 0),
-            new THREE.MeshLambertMaterial({
-                color: 0xFFFFFF
+            new THREE.CircleGeometry(5, 32),
+            new THREE.MeshBasicMaterial({
+                color: 0xB5865A,
+                side: THREE.DoubleSide
             })
         );
 
@@ -116,7 +117,7 @@ function init(){
     // RENDERER
 
     renderer = new THREE.WebGLRenderer({antialias: true});
-    renderer.setClearColor(0xececec);
+    renderer.setClearColor(0x0A0D61);
     renderer.setSize(document.body.clientWidth, document.body.clientHeight);
     document.getElementById('sculpture').appendChild(renderer.domElement);
 
@@ -132,7 +133,7 @@ function init(){
 
     // FOG
 
-    scene.fog = new THREE.Fog(0xececec, 200, 500);
+    scene.fog = new THREE.Fog(0x0A0D61, 200, 500);
 
     /*
     *
