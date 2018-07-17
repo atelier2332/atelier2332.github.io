@@ -116,6 +116,11 @@ section{
     margin: 5px 0;
 }
 
+.frame .desc{
+  font-weight: 300;
+  font-size: 14px;
+}
+
 .frame .line{
     width: 100%;
     height: 20px;
