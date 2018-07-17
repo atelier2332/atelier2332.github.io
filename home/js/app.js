@@ -28,15 +28,40 @@
   var torusKnot = new THREE.Mesh( geometry, material );
   scene.add( torusKnot );
 
+  var slicesOfTheFuture = new THREE.Group();
+  slicesOfTheFuture.add( circle );
+  slicesOfTheFuture.add( torusKnot );
+  scene.add(slicesOfTheFuture);
+
+  // apply random rotation
+  slicesOfTheFuture.rotation.set(Math.random()*360, Math.random()*360, Math.random()*360);
+
+  // set random quaternion for slerp
+  var rQ = new THREE.Quaternion();
+  var euler = new THREE.Euler(Math.random()*360, Math.random()*360, Math.random()*360);
+  rQ.setFromEuler(euler);
+
+  var goSlerp = false;
+  $('.navlink').on('mouseover', function(e){
+    euler.set(Math.random()*360, Math.random()*360, Math.random()*360);
+    rQ.setFromEuler(euler);
+    goSlerp = true;
+  });
+  $('.navlink').on('mouseout', function(e){
+    goSlerp = false;
+  });
+
   function animate() {
   	requestAnimationFrame( animate );
+    //-------------------------------
+
   	renderer.render( scene, camera );
 
-    circle.rotation.x -= 0.002 * nX;
-    circle.rotation.y += 0.001 * nY;
+    if(goSlerp)
+      slicesOfTheFuture.quaternion.slerp( rQ, 0.1 );
 
-    torusKnot.rotation.x -= 0.002 * nX;
-    torusKnot.rotation.y += 0.001 * nY;
+    //slicesOfTheFuture.rotation.x += 0.002 * nY;
+    //slicesOfTheFuture.rotation.y += 0.001 * nX;
   }
   animate();
 

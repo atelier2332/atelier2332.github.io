@@ -99,12 +99,12 @@ ul{
 
 .desc{
   font-size: 112px;
-  width: 345px;
+  width: 300px;
   word-wrap: break-word;
   margin: 0 auto;
   font-weight: 900;
   font-style: italic;
-  line-height: 95px;
+  line-height: 112px;
   position: relative;
   z-index: 1;
   transition: opacity 150ms;
