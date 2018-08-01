@@ -43,7 +43,7 @@ ul{
 .header{
   width: 100%;
   position: fixed;
-  z-index: 99;
+  z-index: 2;
   background-color: #FFCA19;
   top: 0;
   left: 0;
@@ -117,4 +117,32 @@ ul{
   width: 70px;
   margin: 40px auto;
   display: block;
+}
+
+.modal .btn-close{
+  font-style: italic;
+  text-decoration: none;
+}
+
+.modal .columns{
+  margin-top: 40px;
+}
+
+.modal-content{
+  background-color: #0021FF;
+  padding: 80px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.modal-content a{
+  text-decoration: underline;
+}
+
+.modal-content .title{
+  font-size: 22px;
+}
+
+.modal-content .title, .modal-content strong{
+  color: white;
 }
