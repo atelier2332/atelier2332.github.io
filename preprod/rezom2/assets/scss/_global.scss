@@ -1,0 +1,112 @@
+$roboto: 'Roboto Condensed', sans-serif;
+$open: 'Open Sans', sans-serif;
+
+$pink: #F9ACC3;
+$green: #89E1C4;
+$blue: #4FC5EA;
+$yellow: #FFF685;
+
+$bigText: 45px;
+
+html, body{
+  height: 100%;
+  font-family: $open;
+  color: black;
+}
+
+h1, h2, h3, .title{
+  font-family: $roboto;
+  line-height: 1;
+  color: black;
+}
+strong, .subtitle{
+  color: black;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+  &:hover{
+    color: black;
+  }
+}
+
+@mixin multicolor() {
+  &.pink{background-color: $pink;}
+  &.blue{background-color: $blue;}
+  &.green{background-color: $green;}
+  &.yellow{background-color: $yellow;}
+}
+
+@mixin bigTitleContainer() {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $pink;
+  background: $green no-repeat center fixed;
+  background-size: cover;
+}
+
+@mixin bigTitle() {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 500px;
+  height: 150px;
+  font-size: 75px;
+  color: white;
+  text-align: center;
+}
+
+.btn-rounded{
+  background-color: grey;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 99px;
+  display: inline-block;
+  font-family: $roboto;
+  transition: background-color 0.2s;
+  @include multicolor();
+
+  &.yellow, &.green{
+    color: black
+  }
+
+  &:hover{
+    background-color: black;
+    color: white;
+  }
+}
+
+.bigtext{
+  font-size: $bigText;
+  font-weight: 700;
+}
+
+// back colors
+
+.is-yellow{background-color: $yellow;}
+
+//scroll
+
+#btn-scroll-down{
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+}
+#btn-scroll-top{
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  display: block;
+}

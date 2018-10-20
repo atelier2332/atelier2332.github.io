@@ -1,0 +1,70 @@
+nav{
+
+  width: 100%;
+  padding: 20px 20px 15px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  //background-color: white;
+  z-index: 5;
+
+  a{
+    display: block;
+  }
+
+  .logo{
+    width: 15px;
+    float: left;
+  }
+}
+
+#btn-burger{
+  width: 25px;
+  float: right;
+}
+
+#btn-close-menu{
+  float: right;
+  margin: 20px 20px 0 0;
+  width: 30px;
+}
+
+#menu{
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: $yellow;
+  z-index: 20;
+  transform: translate3d(100%, 0, 0);
+  transition: transform 0.5s;
+
+  &.visible{
+    transform: translate3d(0, 0, 0);
+  }
+  &.hidden{
+    transform: translate3d(100%, 0, 0);
+  }
+
+  @include multicolor();
+
+  ul{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 15%;
+    margin: auto 0;
+    width: 300px;
+    height: 180px;
+
+    li{
+      margin-bottom: 10px;
+    }
+
+    li a{
+      font-family: $roboto;
+      font-size: 25px;
+    }
+  }
+}
