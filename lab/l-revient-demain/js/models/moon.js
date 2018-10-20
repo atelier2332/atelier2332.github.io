@@ -11,9 +11,9 @@ function(Backbone, Utils) {
             pieces: null
         },
 
-        url:'http://api.burningsoul.in/moon/'+Utils.timestamp,
+        //url:'http://api.burningsoul.in/moon/'+Utils.timestamp,
         //-->using local
-        //url:'json/moon.json',
+        url:'json/moon.json',
 
         initialize: function() {
             _.bindAll(this, 'processData');
@@ -33,6 +33,6 @@ function(Backbone, Utils) {
             });
         }
     });
-    
+
     return model;
 });
