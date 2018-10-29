@@ -1342,6 +1342,7 @@ section {
 .skills .title {
   float: none;
   margin-bottom: 20px;
+  font-weight: 700;
 }
 .skills li {
   font-size: 14px;
