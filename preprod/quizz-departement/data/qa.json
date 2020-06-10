@@ -1,0 +1,135 @@
+{
+    "qa": [
+        {
+            "id": 0,
+            "img": [
+                "qa-0-0",
+                "qa-0-1",
+                "qa-0-2"
+            ],
+            "answers": [
+                false,
+                false,
+                true
+            ]
+        },
+        {
+            "id": 1,
+            "img": [
+                "qa-1-0",
+                "qa-1-1",
+                "qa-1-2"
+            ],
+            "answers": [
+                false,
+                true,
+                false
+            ]
+        },
+        {
+            "id": 2,
+            "img": [
+                "qa-2-0",
+                "qa-2-1",
+                "qa-2-2"
+            ],
+            "answers": [
+                false,
+                true,
+                false
+            ]
+        },
+        {
+            "id": 3,
+            "img": [
+                "qa-3-0",
+                "qa-3-1",
+                "qa-3-2"
+            ],
+            "answers": [
+                true,
+                false,
+                false
+            ]
+        },
+        {
+            "id": 4,
+            "img": [
+                "qa-4-0",
+                "qa-4-1",
+                "qa-4-2"
+            ],
+            "answers": [
+                true,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "id": 5,
+            "img": [
+                "qa-5-0",
+                "qa-5-1",
+                "qa-5-2"
+            ],
+            "answers": [
+                false,
+                false,
+                true
+            ]
+        },
+        {
+            "id": 6,
+            "img": [
+                "qa-6-0",
+                "qa-6-1",
+                "qa-6-2"
+            ],
+            "answers": [
+                false,
+                false,
+                true
+            ]
+        },
+        {
+            "id": 7,
+            "img": [
+                "qa-7-0",
+                "qa-7-1",
+                "qa-7-2"
+            ],
+            "answers": [
+                false,
+                false,
+                true
+            ]
+        },
+        {
+            "id": 8,
+            "img": [
+                "qa-8-0",
+                "qa-8-1",
+                "qa-8-2"
+            ],
+            "answers": [
+                true,
+                false,
+                false
+            ]
+        },
+        {
+            "id": 9,
+            "img": [
+                "qa-9-0",
+                "qa-9-1",
+                "qa-9-2"
+            ],
+            "answers": [
+                false,
+                false,
+                true
+            ]
+        }
+    ]
+}
