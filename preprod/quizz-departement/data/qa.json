@@ -62,7 +62,7 @@
             "answers": [
                 true,
                 false,
-                false,
+                true,
                 false
             ]
         },
@@ -129,6 +129,19 @@
                 false,
                 false,
                 true
+            ]
+        },
+        {
+            "id": 10,
+            "img": [
+                "qa-10-0",
+                "qa-10-1",
+                "qa-10-2"
+            ],
+            "answers": [
+                false,
+                true,
+                false
             ]
         }
     ]
