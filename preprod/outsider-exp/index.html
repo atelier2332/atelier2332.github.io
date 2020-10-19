@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outsider</title>
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .background{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(211, 191, 12);
+            position: absolute;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background"></div>
+
+
+    <script src="node_modules/pixi.js/dist/pixi.min.js"></script>
+    <script src="node_modules/animejs/lib/anime.min.js"></script>
+    <script>
+
+        // todo: obj plutôt que array
+        var animations = [
+            {
+                name: 'horse',
+                pixiObject: null
+            },
+            {
+                name: 'girl',
+                pixiObject: null
+            },
+            {
+                name: 'heart',
+                pixiObject: null
+            },
+            {
+                name: 'blengins',
+                pixiObject: null
+            },
+            {
+                name: 'cloudhorse',
+                pixiObject: null
+            }
+        ];
+
+        // app
+        // -------------
+        const app = new PIXI.Application({
+            autoResize: true,
+            resolution: devicePixelRatio,
+            transparent: true
+        });
+        document.body.appendChild(app.view);
+
+        // resize
+        // -------------
+        //todo: remplacer tous les windows.innerwidth/height par des globales updatées ici
+        window.addEventListener('resize', resize);
+        function resize() {
+            app.renderer.resize(window.innerWidth, window.innerHeight);
+        }
+        resize();
+
+        // load
+        // -------------
+        animations.forEach(animation => {
+            PIXI.Loader.shared.add(animation.name+'.json')
+        });
+        PIXI.Loader.shared.load(start);        
+
+        // start
+        // -------------
+        function start() {
+
+            // create pixi animations
+            // -------------
+            animations.forEach(animation => {
+                let sheet = PIXI.Loader.shared.resources[animation.name+'.json'].spritesheet;
+                animation.pixiObject = new PIXI.AnimatedSprite(sheet.animations[animation.name]);
+                animation.pixiObject.animationSpeed = 0.5;
+                app.stage.addChild(animation.pixiObject);
+            });
+
+
+            // INITS
+            //
+            animations[0].pixiObject.x = window.innerWidth - 200;
+            animations[0].pixiObject.visible = false;
+            //
+            animations[1].pixiObject.y = window.innerHeight;
+            animations[1].pixiObject.visible = false;
+            //
+            animations[2].pixiObject.x = 800;
+            animations[2].pixiObject.y = -400;
+            animations[2].pixiObject.visible = false;
+            //
+            animations[3].pixiObject.x = -800;
+            animations[3].pixiObject.visible = false;
+            //
+            animations[4].pixiObject.x = -200;
+            animations[4].pixiObject.y = 500;
+            animations[4].pixiObject.visible = false;
+        }
+
+        var locked0 = false;
+        var locked1 = false;
+        var locked2 = false;
+        var locked3 = false;
+        var locked4 = false;
+        var locked5 = false;
+
+        //keyboard
+        // -------------
+        document.addEventListener('keydown', logKey);
+        function logKey(e) {
+            //todo: créer un fonction qui va taper dans un obj
+            // créer les ensembles sous forme de collection d'obj
+            switch (e.code) {
+                case 'KeyQ':
+                    if(!locked0){
+                        //horse
+                        animations[0].pixiObject.x = window.innerWidth - 500;
+
+                        anime({
+                            targets: animations[0].pixiObject,
+                            x: -800,
+                            y: Math.random() * 200,
+                            easing: 'linear',
+                            duration: 3000,
+                            begin: function(){
+                                animations[0].pixiObject.play();
+                                animations[0].pixiObject.visible = true;
+                            },
+                            complete: function(){
+                                animations[0].pixiObject.stop();
+                                animations[0].pixiObject.visible = false;
+                                locked0 = false;
+                            }
+                        });
+
+                        anime({
+                            targets: '.background',
+                            backgroundColor: 'rgb('+Math.random()*255+', '+Math.random()*255+', '+Math.random()*255+')',
+                            duration: 2000,
+                            easing: 'easeInOutQuad'
+                        });
+                    }
+                    locked0 = true;
+
+                    break;
+
+                case 'KeyW':
+
+                    if(!locked1){
+                        //girl
+                        animations[1].pixiObject.y = window.innerHeight - 100;
+
+                        anime({
+                            targets: animations[1].pixiObject,
+                            x: Math.random() * 100,
+                            y: 500,
+                            easing: 'easeOutSine',
+                            duration: 1000,
+                            begin: function(){
+                                animations[1].pixiObject.play();
+                                animations[1].pixiObject.visible = true;
+                            },
+                            complete: function(){
+                                animations[1].pixiObject.stop();
+                                animations[1].pixiObject.visible = false;
+                                locked1 = false;
+                            }
+                        });
+                    }
+                    locked1 = true;
+                    
+                    break;
+
+                case 'KeyE':
+
+                    if(!locked2){
+                        //heart
+                        animations[2].pixiObject.x = 800;
+                        animations[2].pixiObject.y = -300;
+
+                        anime({
+                            targets: animations[2].pixiObject,
+                            //x: Math.random() * 200,
+                            y: Math.random() * 400,
+                            //tint: 0x07ff41,
+                            easing: 'easeOutSine',
+                            duration: 2000,
+                            begin: function(){
+                                animations[2].pixiObject.play();
+                                animations[2].pixiObject.visible = true;
+                            },
+                            complete: function(){
+                                animations[2].pixiObject.stop();
+                                animations[2].pixiObject.visible = false;
+                                locked2 = false;
+                            }
+                        });
+                    }
+                    locked2 = true;
+
+                    break;
+
+                case 'KeyR':
+
+                    if(!locked3){
+                        //blengins
+                        animations[3].pixiObject.x = -200;
+
+                        anime({
+                            targets: animations[3].pixiObject,
+                            x: window.innerWidth,
+                            y: Math.random() * 200,
+                            easing: 'easeOutSine',
+                            duration: 3000,
+                            begin: function(){
+                                animations[3].pixiObject.play();
+                                animations[3].pixiObject.visible = true;
+                            },
+                            complete: function(){
+                                animations[3].pixiObject.stop();
+                                animations[3].pixiObject.visible = false;
+                                locked3 = false;
+                            }
+                        });
+                    }
+                    locked3 = true;
+                    
+                    break;
+
+                case 'KeyT':
+
+                if(!locked4){
+                        //cloud
+                        animations[4].pixiObject.x = -200;
+                        animations[4].pixiObject.y = 500;
+
+                        anime({
+                            targets: animations[4].pixiObject,
+                            x: 800,
+                            y: Math.random() * 200,
+                            easing: 'easeInOutQuad',
+                            duration: 2500,
+                            begin: function(){
+                                animations[4].pixiObject.play();
+                                animations[4].pixiObject.visible = true;
+                            },
+                            complete: function(){
+                                animations[4].pixiObject.stop();
+                                animations[4].pixiObject.visible = false;
+                                locked4 = false;
+                            }
+                        });
+                    }
+                    locked4 = true;
+                    
+                    break;
+
+                case 'KeyY':
+                    
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+        
+    </script>
+</body>
+</html>
