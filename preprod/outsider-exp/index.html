@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outsider</title>
+    <title>Outsider -- p r o t o t y p e -- V0.1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <style>
         html, body{
             margin: 0;
@@ -11,6 +12,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
+            font-family: 'Open Sans', sans-serif;
         }
         .background{
             width: 100%;
@@ -19,15 +21,33 @@
             position: absolute;
             z-index: -1;
         }
+        .logo{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 200px;
+            font-size: 12px;
+        }
+        .logo img{
+            width: 100%;
+        }
     </style>
 </head>
 <body>
 
+    <div class="logo">
+        <img src="outsider.svg" alt="Outsider">
+        <p>p r o t o t y p e -- V0.1</p>
+    </div>
+
     <div class="background"></div>
 
+    <!-- <button class="start" id="bt-start">Start</button> -->
 
     <script src="node_modules/pixi.js/dist/pixi.min.js"></script>
     <script src="node_modules/animejs/lib/anime.min.js"></script>
+    <script src="sound.js"></script>
+    <script src="sound-loader.js"></script>
     <script>
 
         // todo: obj plutôt que array
@@ -50,6 +70,10 @@
             },
             {
                 name: 'cloudhorse',
+                pixiObject: null
+            },
+            {
+                name: 'girl2',
                 pixiObject: null
             }
         ];
@@ -111,6 +135,11 @@
             animations[4].pixiObject.x = -200;
             animations[4].pixiObject.y = 500;
             animations[4].pixiObject.visible = false;
+            //
+            //
+            animations[5].pixiObject.x = -200;
+            animations[5].pixiObject.y = 500;
+            animations[5].pixiObject.visible = false;
         }
 
         var locked0 = false;
@@ -120,6 +149,25 @@
         var locked4 = false;
         var locked5 = false;
 
+        var sounds = [];
+        SoundLoader.init([
+            "snd/9.wav",
+            "snd/6.wav",
+            "snd/15.wav",
+            "snd/3.wav",
+            "snd/10.wav",
+            "snd/5.wav",
+            "snd/13.wav", // backing 1
+            "snd/14.wav" // backing 2
+        ], function(snds, context){
+            sounds = snds;
+        });
+
+        // document.getElementById('bt-start').addEventListener('click', function(){
+        //     // backing
+        //     sounds[6].play(1, 0, true);
+        // });
+
         //keyboard
         // -------------
         document.addEventListener('keydown', logKey);
@@ -127,17 +175,19 @@
             //todo: créer un fonction qui va taper dans un obj
             // créer les ensembles sous forme de collection d'obj
             switch (e.code) {
+
+                //horse
                 case 'KeyQ':
-                    if(!locked0){
-                        //horse
+                    if(!locked0){                       
                         animations[0].pixiObject.x = window.innerWidth - 500;
+                        sounds[0].play();
 
                         anime({
                             targets: animations[0].pixiObject,
                             x: -800,
                             y: Math.random() * 200,
                             easing: 'linear',
-                            duration: 3000,
+                            duration: 4000,
                             begin: function(){
                                 animations[0].pixiObject.play();
                                 animations[0].pixiObject.visible = true;
@@ -160,18 +210,18 @@
 
                     break;
 
+                //girl
                 case 'KeyW':
-
                     if(!locked1){
-                        //girl
                         animations[1].pixiObject.y = window.innerHeight - 100;
+                        sounds[1].play();
 
                         anime({
                             targets: animations[1].pixiObject,
                             x: Math.random() * 100,
-                            y: 500,
+                            y: 300,
                             easing: 'easeOutSine',
-                            duration: 1000,
+                            duration: 2000,
                             begin: function(){
                                 animations[1].pixiObject.play();
                                 animations[1].pixiObject.visible = true;
@@ -183,16 +233,15 @@
                             }
                         });
                     }
-                    locked1 = true;
-                    
+                    locked1 = true;                
                     break;
 
+                //heart
                 case 'KeyE':
-
-                    if(!locked2){
-                        //heart
+                    if(!locked2){            
                         animations[2].pixiObject.x = 800;
                         animations[2].pixiObject.y = -300;
+                        sounds[2].play();
 
                         anime({
                             targets: animations[2].pixiObject,
@@ -200,7 +249,7 @@
                             y: Math.random() * 400,
                             //tint: 0x07ff41,
                             easing: 'easeOutSine',
-                            duration: 2000,
+                            duration: 1500,
                             begin: function(){
                                 animations[2].pixiObject.play();
                                 animations[2].pixiObject.visible = true;
@@ -213,21 +262,20 @@
                         });
                     }
                     locked2 = true;
-
                     break;
 
+                //blengins
                 case 'KeyR':
-
-                    if(!locked3){
-                        //blengins
+                    if(!locked3){             
                         animations[3].pixiObject.x = -200;
+                        sounds[3].play();
 
                         anime({
                             targets: animations[3].pixiObject,
                             x: window.innerWidth,
                             y: Math.random() * 200,
                             easing: 'easeOutSine',
-                            duration: 3000,
+                            duration: 2500,
                             begin: function(){
                                 animations[3].pixiObject.play();
                                 animations[3].pixiObject.visible = true;
@@ -239,23 +287,22 @@
                             }
                         });
                     }
-                    locked3 = true;
-                    
+                    locked3 = true;                
                     break;
 
+                //cloud
                 case 'KeyT':
-
-                if(!locked4){
-                        //cloud
+                    if(!locked4){                    
                         animations[4].pixiObject.x = -200;
                         animations[4].pixiObject.y = 500;
+                        sounds[4].play();
 
                         anime({
                             targets: animations[4].pixiObject,
                             x: 800,
                             y: Math.random() * 200,
                             easing: 'easeInOutQuad',
-                            duration: 2500,
+                            duration: 2400,
                             begin: function(){
                                 animations[4].pixiObject.play();
                                 animations[4].pixiObject.visible = true;
@@ -267,12 +314,34 @@
                             }
                         });
                     }
-                    locked4 = true;
-                    
+                    locked4 = true;                  
                     break;
 
+                // girl 2
                 case 'KeyY':
-                    
+                    if(!locked5){                    
+                        animations[5].pixiObject.x = -200;
+                        animations[5].pixiObject.y = 500;
+                        sounds[5].play();
+
+                        anime({
+                            targets: animations[5].pixiObject,
+                            x: window.innerWidth,
+                            y: Math.random() * 200,
+                            easing: 'easeInOutQuad',
+                            duration: 3500,
+                            begin: function(){
+                                animations[5].pixiObject.play();
+                                animations[5].pixiObject.visible = true;
+                            },
+                            complete: function(){
+                                animations[5].pixiObject.stop();
+                                animations[5].pixiObject.visible = false;
+                                locked5 = false;
+                            }
+                        });
+                    }
+                    locked5 = true;  
                     break;
             
                 default:
