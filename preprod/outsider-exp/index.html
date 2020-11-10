@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outsider -- p r o t o t y p e -- V0.1</title>
+    <title>Outsider -- p r o t o t y p e</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <style>
         html, body{
@@ -31,13 +31,30 @@
         .logo img{
             width: 100%;
         }
+
+        .tuto{
+            position: absolute;
+            top: 10px;
+            right: 40px;            
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+        }
     </style>
 </head>
 <body>
 
     <div class="logo">
         <img src="outsider.svg" alt="Outsider">
-        <p>p r o t o t y p e -- V0.1</p>
+        <p>p r o t o t y p e v0.2</p>
+    </div>
+
+    <div class="tuto">
+        <p>
+            Tutoriel: pour lancer des animations/samples, appuyez sur les touches "A, Z, E, R, T, Y".
+        </p>
     </div>
 
     <div class="background"></div>
@@ -199,12 +216,12 @@
                             }
                         });
 
-                        anime({
-                            targets: '.background',
-                            backgroundColor: 'rgb('+Math.random()*255+', '+Math.random()*255+', '+Math.random()*255+')',
-                            duration: 2000,
-                            easing: 'easeInOutQuad'
-                        });
+                        // anime({
+                        //     targets: '.background',
+                        //     backgroundColor: 'rgb('+Math.random()*255+', '+Math.random()*255+', '+Math.random()*255+')',
+                        //     duration: 2000,
+                        //     easing: 'easeInOutQuad'
+                        // });
                     }
                     locked0 = true;
 
