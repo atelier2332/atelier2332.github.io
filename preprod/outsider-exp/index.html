@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outsider -- p r o t o t y p e</title>
+    <title>Outsider - expérience interactive</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <style>
         html, body{
@@ -13,11 +13,12 @@
             height: 100%;
             overflow: hidden;
             font-family: 'Open Sans', sans-serif;
+            background-image: url('bg.jpg');
+            background-size: cover;
         }
         .background{
             width: 100%;
             height: 100%;
-            background-color: rgb(211, 191, 12);
             position: absolute;
             z-index: -1;
         }
@@ -32,15 +33,30 @@
             width: 100%;
         }
 
-        .tuto{
+        #tuto{
             position: absolute;
-            top: 10px;
-            right: 40px;            
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            width: 700px;
+            height: 300px;
+            margin: auto;     
             font-size: 20px;
-            padding: 10px;
+            padding: 40px;
             border-radius: 10px;
             background-color: black;
             color: white;
+        }
+        #close-tuto{
+            background-color: white;
+            padding: 20px;
+            color: black;
+            text-decoration: none;
+            display: block;
+            width: 150px;
+            text-align: center;
+            margin: 50px auto 0 auto;
         }
     </style>
 </head>
@@ -48,13 +64,15 @@
 
     <div class="logo">
         <img src="outsider.svg" alt="Outsider">
-        <p>p r o t o t y p e v0.2</p>
+        <p>prototype v0.3</p>
     </div>
 
-    <div class="tuto">
+    <div id="tuto">
+        <h1>Tutoriel</h1>
         <p>
-            Tutoriel: pour lancer des animations/samples, appuyez sur les touches "A, Z, E, R, T, Y".
+            Pour lancer des animations/samples, appuyez sur les touches "A, Z, E, R, T, Y".
         </p>
+        <a href="#" id="close-tuto">J'ai compris !</a>
     </div>
 
     <div class="background"></div>
@@ -169,21 +187,22 @@
         var sounds = [];
         SoundLoader.init([
             "snd/9.wav",
-            "snd/6.wav",
             "snd/15.wav",
-            "snd/3.wav",
-            "snd/10.wav",
-            "snd/5.wav",
-            "snd/13.wav", // backing 1
-            "snd/14.wav" // backing 2
+            "snd/18.wav",
+            "snd/29.wav",
+            "snd/23.wav",
+            "snd/30.wav",
+            "snd/21.wav", // backing
         ], function(snds, context){
             sounds = snds;
         });
 
-        // document.getElementById('bt-start').addEventListener('click', function(){
-        //     // backing
-        //     sounds[6].play(1, 0, true);
-        // });
+        document.getElementById('close-tuto').addEventListener('click', function(e){
+            e.preventDefault();
+            document.getElementById('tuto').style.display = "none";
+            // backing
+            sounds[6].play(1, 0, true);
+        });
 
         //keyboard
         // -------------
@@ -236,9 +255,9 @@
                         anime({
                             targets: animations[1].pixiObject,
                             x: Math.random() * 100,
-                            y: 300,
+                            y: 100,
                             easing: 'easeOutSine',
-                            duration: 2000,
+                            duration: 800,
                             begin: function(){
                                 animations[1].pixiObject.play();
                                 animations[1].pixiObject.visible = true;
@@ -256,17 +275,17 @@
                 //heart
                 case 'KeyE':
                     if(!locked2){            
-                        animations[2].pixiObject.x = 800;
+                        animations[2].pixiObject.x = window.innerWidth / 2;
                         animations[2].pixiObject.y = -300;
                         sounds[2].play();
 
                         anime({
                             targets: animations[2].pixiObject,
                             //x: Math.random() * 200,
-                            y: Math.random() * 400,
+                            y: 100,
                             //tint: 0x07ff41,
                             easing: 'easeOutSine',
-                            duration: 1500,
+                            duration: 800,
                             begin: function(){
                                 animations[2].pixiObject.play();
                                 animations[2].pixiObject.visible = true;
@@ -289,10 +308,10 @@
 
                         anime({
                             targets: animations[3].pixiObject,
-                            x: window.innerWidth,
+                            x: window.innerWidth / 2,
                             y: Math.random() * 200,
                             easing: 'easeOutSine',
-                            duration: 2500,
+                            duration: 800,
                             begin: function(){
                                 animations[3].pixiObject.play();
                                 animations[3].pixiObject.visible = true;
@@ -310,13 +329,13 @@
                 //cloud
                 case 'KeyT':
                     if(!locked4){                    
-                        animations[4].pixiObject.x = -200;
-                        animations[4].pixiObject.y = 500;
+                        animations[4].pixiObject.x = -500;
+                        animations[4].pixiObject.y = 300;
                         sounds[4].play();
 
                         anime({
                             targets: animations[4].pixiObject,
-                            x: 800,
+                            x: 200,
                             y: Math.random() * 200,
                             easing: 'easeInOutQuad',
                             duration: 2400,
@@ -338,15 +357,15 @@
                 case 'KeyY':
                     if(!locked5){                    
                         animations[5].pixiObject.x = -200;
-                        animations[5].pixiObject.y = 500;
+                        animations[5].pixiObject.y = 300;
                         sounds[5].play();
 
                         anime({
                             targets: animations[5].pixiObject,
-                            x: window.innerWidth,
+                            x: window.innerWidth / 2,
                             y: Math.random() * 200,
                             easing: 'easeInOutQuad',
-                            duration: 3500,
+                            duration: 2000,
                             begin: function(){
                                 animations[5].pixiObject.play();
                                 animations[5].pixiObject.visible = true;
