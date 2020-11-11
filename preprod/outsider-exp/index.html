@@ -155,6 +155,7 @@
             // INITS
             //
             animations[0].pixiObject.x = window.innerWidth - 200;
+            animations[0].pixiObject.y = window.innerHeight * .3;
             animations[0].pixiObject.visible = false;
             //
             animations[1].pixiObject.y = window.innerHeight;
@@ -213,7 +214,7 @@
             switch (e.code) {
 
                 //horse
-                case 'KeyQ':
+                case 'KeyY':
                     if(!locked0){                       
                         animations[0].pixiObject.x = window.innerWidth - 500;
                         sounds[0].play();
@@ -221,7 +222,7 @@
                         anime({
                             targets: animations[0].pixiObject,
                             x: -800,
-                            y: Math.random() * 200,
+                            y: window.innerHeight * .3,
                             easing: 'linear',
                             duration: 4000,
                             begin: function(){
@@ -247,7 +248,7 @@
                     break;
 
                 //girl
-                case 'KeyW':
+                case 'KeyQ':
                     if(!locked1){
                         animations[1].pixiObject.y = window.innerHeight - 100;
                         sounds[1].play();
@@ -273,7 +274,7 @@
                     break;
 
                 //heart
-                case 'KeyE':
+                case 'KeyW':
                     if(!locked2){            
                         animations[2].pixiObject.x = window.innerWidth / 2;
                         animations[2].pixiObject.y = -300;
@@ -301,7 +302,7 @@
                     break;
 
                 //blengins
-                case 'KeyR':
+                case 'KeyE':
                     if(!locked3){             
                         animations[3].pixiObject.x = -200;
                         sounds[3].play();
@@ -330,13 +331,12 @@
                 case 'KeyT':
                     if(!locked4){                    
                         animations[4].pixiObject.x = -500;
-                        animations[4].pixiObject.y = 300;
+                        animations[4].pixiObject.y = -100;
                         sounds[4].play();
 
                         anime({
                             targets: animations[4].pixiObject,
-                            x: 200,
-                            y: Math.random() * 200,
+                            x: 0,
                             easing: 'easeInOutQuad',
                             duration: 2400,
                             begin: function(){
@@ -354,7 +354,7 @@
                     break;
 
                 // girl 2
-                case 'KeyY':
+                case 'KeyR':
                     if(!locked5){                    
                         animations[5].pixiObject.x = -200;
                         animations[5].pixiObject.y = 300;
