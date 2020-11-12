@@ -158,19 +158,24 @@
             animations[0].pixiObject.y = window.innerHeight * .3;
             animations[0].pixiObject.visible = false;
             //
-            animations[1].pixiObject.y = window.innerHeight;
+            animations[1].pixiObject.y = 100;
             animations[1].pixiObject.visible = false;
+            animations[1].pixiObject.animationSpeed = .2;
+            animations[1].pixiObject.loop = false;
             //
-            animations[2].pixiObject.x = 800;
-            animations[2].pixiObject.y = -400;
+            animations[2].pixiObject.x = window.innerWidth * .3;
+            animations[2].pixiObject.y = 100;
             animations[2].pixiObject.visible = false;
+            animations[2].pixiObject.animationSpeed = .3;
             //
             animations[3].pixiObject.x = -800;
             animations[3].pixiObject.visible = false;
             //
-            animations[4].pixiObject.x = -200;
-            animations[4].pixiObject.y = 500;
+            animations[4].pixiObject.x = window.innerWidth * .3;
+            animations[4].pixiObject.y = 0;
             animations[4].pixiObject.visible = false;
+            animations[4].pixiObject.loop = false;
+            animations[4].pixiObject.animationSpeed = .2;
             //
             //
             animations[5].pixiObject.x = -200;
@@ -250,17 +255,17 @@
                 //girl
                 case 'KeyQ':
                     if(!locked1){
-                        animations[1].pixiObject.y = window.innerHeight - 100;
                         sounds[1].play();
+                        animations[1].pixiObject.x = 100;             
 
                         anime({
                             targets: animations[1].pixiObject,
-                            x: Math.random() * 100,
-                            y: 100,
+                            x: 110,
+                            //y: 100,
                             easing: 'easeOutSine',
                             duration: 800,
                             begin: function(){
-                                animations[1].pixiObject.play();
+                                animations[1].pixiObject.gotoAndPlay(0);
                                 animations[1].pixiObject.visible = true;
                             },
                             complete: function(){
@@ -276,14 +281,13 @@
                 //heart
                 case 'KeyW':
                     if(!locked2){            
-                        animations[2].pixiObject.x = window.innerWidth / 2;
-                        animations[2].pixiObject.y = -300;
+                        animations[2].pixiObject.y = 100;
                         sounds[2].play();
 
                         anime({
                             targets: animations[2].pixiObject,
                             //x: Math.random() * 200,
-                            y: 100,
+                            y: 50,
                             //tint: 0x07ff41,
                             easing: 'easeOutSine',
                             duration: 800,
@@ -329,18 +333,15 @@
 
                 //cloud
                 case 'KeyT':
-                    if(!locked4){                    
-                        animations[4].pixiObject.x = -500;
-                        animations[4].pixiObject.y = -100;
+                    if(!locked4){
                         sounds[4].play();
-
                         anime({
                             targets: animations[4].pixiObject,
-                            x: 0,
+                            //x: 0,
                             easing: 'easeInOutQuad',
                             duration: 2400,
                             begin: function(){
-                                animations[4].pixiObject.play();
+                                animations[4].pixiObject.gotoAndPlay(0);
                                 animations[4].pixiObject.visible = true;
                             },
                             complete: function(){
@@ -367,7 +368,7 @@
                             easing: 'easeInOutQuad',
                             duration: 2000,
                             begin: function(){
-                                animations[5].pixiObject.play();
+                                animations[5].pixiObject.gotoAndPlay(0);
                                 animations[5].pixiObject.visible = true;
                             },
                             complete: function(){
