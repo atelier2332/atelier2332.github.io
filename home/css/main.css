@@ -1,13 +1,6 @@
 html, body{
-  height: 100%;
-  min-height: 100%;
-}
-
-body{
   font-family: 'Space Mono', monospace;
   color: #FF57BC;
-  margin: 0;
-  padding: 121px 0 20px 0;
   background-color: #FFE600;
 }
 
@@ -39,4 +32,10 @@ a:hover{
 
 strong{
   color: #FF57BC;
+}
+
+@media screen and (min-width: 640px) {
+  body{
+   padding-top: 140px;
+  }
 }
