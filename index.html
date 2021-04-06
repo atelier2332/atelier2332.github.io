@@ -5,37 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="Développement front-end / creative coding / design et conception UI/UX">
-  <title>Néons Mutants | studio de création digitale</title>
+  <title>ysygy | Agence de création digitale</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900,900i" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="bower_components/bulma/css/bulma.min.css">
   <link rel="stylesheet" href="home/css/main.css">
 </head>
 <body>
 
-  <header class="header">
-      <img src="home/img/logo-nm.svg" alt="Néons Mutants" class="logo">
-  </header>
+  <div class="container" id="content">
+    <header class="hero">
+      <div class="hero-body">
+        <img src="home/img/ysygy.svg" alt="ysygy" class="logo">
+      </div>
+      
+    </header>
 
-  <div class="navlink-container left">
-    <a href="https://www.behance.net/neonsmutants" class="navlink" id="navlink-left">portfolio</a>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="columns">
+          <div class="column">
+            <p class="title">
+              Créons des solutions digitales qui sortent du lot.
+            </p>
+          </div>
+          <div class="column">
+            <p>
+              <strong>ysygy</strong> est une agence de création digitale.
+            </p>
+            <p>
+              Nous intervenons tous vos projets de <a href="#" class="navlink">sites web complexes</a>, <a href="#" class="navlink">expériences interactives</a>, <a href="#" class="navlink">applications métier</a>, 
+              <a href="#" class="navlink">objets connectés</a>, <a href="#" class="navlink">réalité augmentée</a>, <a href="#" class="navlink">réalité virtuelle</a>, <a href="#" class="navlink">installations interactives</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="columns">
+        <div class="column"></div>
+        <div class="column">
+          <ul>
+            <li><a href="mailto:neonsmutants@gmail.com">Contactez-nous</a></li>
+            <li><a href="https://www.behance.net/ysygy">Nos projets</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </div>
-
-  <div class="desc">
-    <p>CREATIVE CODING + LOVE = WEB & MOBILE APPS = AR/VR = INTERACTIVE INSTALLATIONS = NM</p>
-  </div>
-
-  <div class="navlink-container right">
-    <a href="https://github.com/neonsmutants" class="navlink" id="navlink-right">github</a>
-  </div>
-
-  <div class="navlink-title">portfolio</div>
 
   <section id="three"></section>
 
   <script src="bower_components/three.js/three.min.js"></script>
   <script src="bower_components/zepto/zepto.min.js"></script>
   <script type="text/javascript" src="home/js/app.js"></script>
-  <script type="text/javascript" src="home/js/transitions.js"></script>
 </body>
 </html>

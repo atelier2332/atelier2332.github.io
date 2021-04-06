@@ -50,6 +50,9 @@
   $('.navlink').on('mouseout', function(e){
     goSlerp = false;
   });
+  $('.navlink').on('click', function(e){
+    e.preventDefault();
+  });
 
   function animate() {
   	requestAnimationFrame( animate );
